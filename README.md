@@ -1,4 +1,4 @@
-# Spring 2023 Capstone Team Simplawfy
+# Spring 2023 Capstone Team SimpLAWfy
 
 ## Team Members
 Shehzad Shahbuddin
