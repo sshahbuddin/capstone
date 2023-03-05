@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Shehzad Shahbuddin <shehzad@berkeley.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastapi = "^0.92.0"
+uvicorn = "^0.20.0"
+numpy = "^1.24.2"
+sentence-transformers = "^2.2.2"
+transformers = "^4.26.1"
+scipy = "^1.10.1"
+sklearn = "^0.0.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
