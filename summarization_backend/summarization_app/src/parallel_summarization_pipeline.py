@@ -105,6 +105,6 @@ def pooled_paragraph_summary_pipeline(text, model, summarizer, p=10):
   norm_sentences = normalize_sentence_length(sentences)
   paragraphs = get_paragraphs(norm_sentences, minmimas)
   para_sum = pool.map(summarizer, [x for x in paragraphs])
-  joined_summary = ' '.join([x[0]['summary_text'] for x in para_sum])
+  joined_summary = '\n\n'.join([x[0]['summary_text'] for x in para_sum])
   return joined_summary
 
