@@ -9,10 +9,10 @@ from transformers import pipeline
 
 from src import parallel_summarization_pipeline
 
+app = FastAPI()
+
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-
-app = FastAPI()
 # model = joblib.load("./src/model_pipeline.pkl")
 model = SentenceTransformer('all-mpnet-base-v2')
 summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
