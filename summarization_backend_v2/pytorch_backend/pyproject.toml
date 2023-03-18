@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pytorch-backend"
+version = "0.1.0"
+description = ""
+authors = ["Shehzad Shahbuddin <shehzad@berkeley.edu>"]
+readme = "README.md"
+packages = [{include = "pytorch_backend", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastapi = "^0.94.1"
+uvicorn = "^0.21.1"
+numpy = "^1.24.2"
+sentence-transformers = "^2.2.2"
+torch = "^2.0.0"
+scikit-learn = "^1.2.2"
+transformers = "^4.27.1"
+pydantic = "^1.10.6"
+scipy = "^1.10.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
