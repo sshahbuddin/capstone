@@ -97,13 +97,16 @@ def get_paragraphs(sentences, minmimas):
 
 
 def paragraph_summary_pipeline(text, model, summarizer, p=10):
-  sentences = split_sentences(text)
-  embeddings = create_embeddings(sentences, model=model)
-  similarities = create_similarities(embeddings)
-  activated_similarities = activate_similarities(similarities, p_size=p)
-  minimas = get_minimas(activated_similarities)
-  norm_sentences = normalize_sentence_length(sentences)
-  paragraphs = get_paragraphs(norm_sentences, minimas)
-  para_sum = [summarizer(x)[0]['summary_text'] for x in paragraphs]
-  summary = "\n".join(para_sum)
-  return summary
+  try:
+    sentences = split_sentences(text)
+    embeddings = create_embeddings(sentences, model=model)
+    similarities = create_similarities(embeddings)
+    activated_similarities = activate_similarities(similarities, p_size=p)
+    minimas = get_minimas(activated_similarities)
+    norm_sentences = normalize_sentence_length(sentences)
+    paragraphs = get_paragraphs(norm_sentences, minimas)
+    para_sum = [summarizer(x)[0]['summary_text'] for x in paragraphs]
+    summary = "\n".join(para_sum)
+    return summary
+  except ValueError:
+    return 'error parsing policy'

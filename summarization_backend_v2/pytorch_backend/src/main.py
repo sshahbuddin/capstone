@@ -14,7 +14,7 @@ app = FastAPI()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # load the retriever model from huggingface model hub
 retriever = SentenceTransformer("flax-sentence-embeddings/all_datasets_v3_mpnet-base", device=device)
-summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum", device = 0) if torch.cuda.is_available() else pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
+summarizer = pipeline("summarization", model="philschmid/bart-large-cnn-samsum", device = 0,  truncation=True) if torch.cuda.is_available() else pipeline("summarization", model="philschmid/bart-large-cnn-samsum")
 
 class ToS(BaseModel):
     Company: str
